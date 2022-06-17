@@ -3,9 +3,10 @@ import { NavigationContainer } from "@react-navigation/native";
 import { View } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 import Overview from "./Overview";
 import Statistics from "./Statistics";
-import Goals from "./Goals";
+import Categories from "./Categories";
 import Savings from "./Savings";
 
 const Tab = createMaterialBottomTabNavigator();
@@ -15,7 +16,7 @@ function MyTabs() {
     <>
       <NavigationContainer>
         <Tab.Navigator
-          initialRouteName="Home"
+          initialRouteName="Categories"
           activeColor="#0c8cfc"
           inactiveColor="white"
           barStyle={{
@@ -79,13 +80,13 @@ function MyTabs() {
             }}
           />
           <Tab.Screen
-            name="Goals"
-            component={Goals}
+            name="Categories"
+            component={Categories}
             options={{
               tabBarIcon: ({ focused }) => (
                 <View>
-                  <MaterialCommunityIcons
-                    name="text-box-check"
+                  <AntDesign
+                    name="tag"
                     style={{
                       fontSize: 25,
                       color: focused ? "#0c8cfc" : "#32322f",
