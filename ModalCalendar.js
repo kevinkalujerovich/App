@@ -3,6 +3,7 @@ import { Button, Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import DatePicker from "react-native-modern-datepicker";
 import Modal from "react-native-modal";
 import { FontAwesome } from "@expo/vector-icons";
+import { colorPrincipal } from "./Variables";
 
 function ModalCalendar() {
   const [isModalVisible, setModalVisible] = useState(false);
@@ -176,7 +177,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 4,
     elevation: 3,
-    backgroundColor: "#0c8cfc",
+    backgroundColor: colorPrincipal,
   },
 });
 

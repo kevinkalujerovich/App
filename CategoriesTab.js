@@ -11,19 +11,13 @@ import {
   colorSecundario,
 } from "./Variables";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
-
-function Ingreso() {
-  return (
-    <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Home!</Text>
-    </View>
-  );
-}
+import Ingreso from "./Screens/Ingreso";
+import Egresos from "./Screens/Egresos";
 
 function Egreso() {
   return (
     <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text>Settings!</Text>
+      <Text>LISTA DE EGRESOS</Text>
     </View>
   );
 }
@@ -48,7 +42,7 @@ export default function CategoriesTab() {
       }}
     >
       <Tab.Screen name="Ingreso (29)" component={Ingreso} />
-      <Tab.Screen name="Egreso (9)" component={Egreso} />
+      <Tab.Screen name="Egreso (9)" component={Egresos} />
     </Tab.Navigator>
   );
 }

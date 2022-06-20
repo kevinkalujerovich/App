@@ -1,8 +1,9 @@
 import * as React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 import { Entypo } from "@expo/vector-icons";
+import { View, Text } from "react-native-web";
 
-const FloatingButtonAction = () => {
+const FloatingButtonAction = (props) => {
   const clickHandler = () => {
     alert("Floating Button Clicked");
   };
@@ -10,7 +11,7 @@ const FloatingButtonAction = () => {
     <>
       <TouchableOpacity
         activeOpacity={0.7}
-        onPress={clickHandler}
+        onPress={props.funcion}
         style={styles.touchableOpacityStyle}
       >
         <Entypo name="plus" style={styles.floatingButtonStyle} />
