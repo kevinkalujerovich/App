@@ -1,25 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { StyleSheet } from "react-native";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ScrollView,
-  Button,
-} from "react-native-web";
 import AppbarHeader from "./AppbarHeader";
-import { AntDesign } from "@expo/vector-icons";
-import { Divider } from "react-native-paper";
-import Modal from "react-native-modal";
-import FloatingButtonAction from "./FloatingButtonAction";
-import ModalAddCategory from "./ModalAddCategory";
+import CategoriesTab from "./CategoriesTab";
 
 const Categories = () => {
-  const [isModalVisible, setModalVisible] = useState(false);
-  const toggleModal = () => {
-    setModalVisible(!isModalVisible);
-  };
-
   const list = [
     { nombre: "item 1", id: "1" },
     { nombre: "item 2", id: "2" },
@@ -35,67 +19,12 @@ const Categories = () => {
 
   return (
     <>
-      <AppbarHeader title="Categories" />
-      <ScrollView>
-        <View style={styles.viewContainerButtonsMain}>
-          <Text style={styles.textMainTitle}>Category</Text>
-          <TouchableOpacity style={styles.button} onPress={toggleModal}>
-            <AntDesign name="pluscircle" style={styles.iconButton} />
-          </TouchableOpacity>
-        </View>
-        <Modal
-          isVisible={isModalVisible}
-          animationIn={"slideInUp"}
-          animationOut={"slideOutUp"}
-          animationInTiming={10}
-          style={{
-            alignItems: "center",
-          }}
-        >
-          <ModalAddCategory hideModal={toggleModal} />
-        </Modal>
-        <View style={styles.container}>
-          <Text style={styles.textTitle}>Lista de ingresos</Text>
-        </View>
-        <View style={styles.container}>
-          <Text style={styles.textTitle}>Lista de egresos</Text>
-        </View>
-      </ScrollView>
-      <FloatingButtonAction />
+      <AppbarHeader title="Categorias" />
+      <CategoriesTab />
     </>
   );
 };
 
-const styles = StyleSheet.create({
-  textMainTitle: {
-    fontSize: 20,
-  },
-  textList: {
-    fontSize: 13,
-    padding: 5,
-  },
-  container: {
-    backgroundColor: "white",
-    margin: 5,
-  },
-  textTitle: {
-    fontSize: 20,
-    padding: 10,
-  },
-  viewContainerButtonsMain: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    margin: 10,
-  },
-  button: {
-    marginStart: 5,
-    paddingTop: 4,
-  },
-  iconButton: {
-    fontSize: 20,
-    color: "#28a745",
-    fontWeight: "bold",
-  },
-});
+const styles = StyleSheet.create({});
 
 export default Categories;

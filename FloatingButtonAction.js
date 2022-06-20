@@ -41,6 +41,8 @@ const styles = StyleSheet.create({
   floatingButtonStyle: {
     resizeMode: "contain",
     fontSize: 17,
+    fontWeight: "bold",
+    color: "black",
   },
 });
 

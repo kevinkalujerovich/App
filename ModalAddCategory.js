@@ -1,9 +1,8 @@
 import * as React from "react";
 import { StyleSheet } from "react-native";
 import { View, Text, TouchableOpacity } from "react-native-web";
-import { TextInput, RadioButton, Divider } from "react-native-paper";
-import { MaterialIcons } from "@expo/vector-icons";
-import { checkPluginState } from "react-native-reanimated/lib/reanimated2/core";
+import { TextInput, RadioButton } from "react-native-paper";
+import { colorPrincipal } from "./Variables";
 
 const ModalAddCategory = (props) => {
   const [checked, setChecked] = React.useState("first");
@@ -20,28 +19,26 @@ const ModalAddCategory = (props) => {
         <Text style={styles.textMainTitle}>AGREGAR CATEGORIA</Text>
         <Text style={styles.textMainSubtitle}>Tipo de Categoria</Text>
         <View style={styles.containerViewComponents}>
-          <View style={styles.containerViewRadiobutton}>
-            <RadioButton
-              value="first"
-              status={checked === "first" ? "checked" : "unchecked"}
-              onPress={() => setChecked("first")}
-              color="#00CED1"
-            />
-            <View style={{ justifyContent: "center" }}>
-              <Text style={styles.textRadioButton}>Ingreso</Text>
-            </View>
+          <RadioButton
+            value="first"
+            status={checked === "first" ? "checked" : "unchecked"}
+            onPress={() => setChecked("first")}
+            color="#00CED1"
+          />
+          <View style={{ justifyContent: "center" }}>
+            <Text style={styles.textRadioButton}>Ingreso</Text>
           </View>
-          <View style={styles.containerViewRadiobutton}>
-            <RadioButton
-              value="second"
-              status={checked === "second" ? "checked" : "unchecked"}
-              onPress={() => setChecked("second")}
-              color="#00CED1"
-              fontSize="10"
-            />
-            <View style={{ justifyContent: "center" }}>
-              <Text style={styles.textRadioButton}>Egreso</Text>
-            </View>
+        </View>
+        <View style={styles.containerViewComponents}>
+          <RadioButton
+            value="second"
+            status={checked === "second" ? "checked" : "unchecked"}
+            onPress={() => setChecked("second")}
+            color="#00CED1"
+            fontSize="10"
+          />
+          <View style={{ justifyContent: "center" }}>
+            <Text style={styles.textRadioButton}>Egreso</Text>
           </View>
         </View>
         <Text style={styles.textMainSubtitle}>Descripción</Text>
@@ -77,9 +74,8 @@ const ModalAddCategory = (props) => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
-    width: "80%",
-    padding: 20,
-    borderRadius: 5,
+    width: "90%",
+    padding: 10,
   },
   textMainTitle: {
     fontFamily: "Raleway_800ExtraBold",
@@ -93,13 +89,8 @@ const styles = StyleSheet.create({
   containerViewComponents: {
     flexDirection: "row",
   },
-  containerViewRadiobutton: {
-    flexDirection: "row",
-    paddingRight: 8,
-    height: 40,
-  },
   textRadioButton: {
-    fontSize: 15,
+    fontSize: 14,
     fontFamily: "Raleway_800ExtraBold",
   },
   viewButtonCancel: {
@@ -107,9 +98,6 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 5,
     marginLeft: 5,
-    borderColor: "black",
-    borderWidth: 1,
-    borderColor: "black",
     borderWidth: 1,
     borderColor: "gray",
     shadowColor: "rgba(0,0,0, .4)",
@@ -120,7 +108,7 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   viewButtonAceptar: {
-    backgroundColor: "#00CED1",
+    backgroundColor: colorPrincipal,
     padding: 10,
     borderRadius: 5,
     marginLeft: 5,
@@ -133,7 +121,6 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   textCancel: {
-    color: "color",
     fontSize: 10,
     fontFamily: "Raleway_800ExtraBold",
   },
